@@ -51,28 +51,30 @@ public class LoginServlet extends HttpServlet{
 		System.out.println("post我要登录了");
 		response.setIntHeader("Refresh", 5);
 		//接收客户端信息
-				String username = request.getParameter("username");
-				username = new String(username.getBytes("ISO-8859-1"),"UTF-8");
-				String password = request.getParameter("password");
-				System.out.println(username+"--"+password);
+		String username = request.getParameter("username");
+		username = new String(username.getBytes("ISO-8859-1"),"UTF-8");
+		String password = request.getParameter("password");
+		System.out.println(username+"--"+password);
 				
-				//新建服务对象
-				LoginService service = new LoginService();
-				//验证处理
-				boolean loged = service.login(username, password);
-				if(loged)
-				{
-					System.out.println("success");
-					request.getSession().setAttribute("username", username);
-				}else {
-					System.out.println("failed");
-				}
-				
-				//返回信息到客户端
-				response.setCharacterEncoding("UTF-8");
-				PrintWriter out = response.getWriter();
-				out.print("登录成功");
-				out.flush();
-				out.close();
+		//新建服务对象
+		LoginService service = new LoginService();
+		//验证处理
+		boolean loged = service.login(username, password);
+		//返回信息到客户端
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		if(loged)
+		{
+			System.out.println("success");
+			request.getSession().setAttribute("username", username);		
+			out.print("登录成功");
+			out.flush();
+			out.close();
+		}else {
+			System.out.println("failed");
+			out.print("登录失败");
+			out.flush();
+			out.close();	
+		}
 	}
 }

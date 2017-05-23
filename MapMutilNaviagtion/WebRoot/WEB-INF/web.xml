@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
   	<servlet-name>LoginServlet</servlet-name>
     <servlet-class>Servlet.LoginServlet</servlet-class>
@@ -16,11 +17,37 @@
   		<param-name></param-name>
   		<param-value></param-value>
   	</init-param>
-  </servlet>
-  
+  </servlet> 
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>GetUserInfoServlet</servlet-name>
+    <servlet-class>Servlet.GetUserInfoServlet</servlet-class>
+  	<init-param>
+  		<param-name></param-name>
+  		<param-value></param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetUserInfoServlet</servlet-name>
+    <url-pattern>/GetUserInfoServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>Servlet.RegisterServlet</servlet-class>
+  	<init-param>
+  		<param-name></param-name>
+  		<param-value></param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
   

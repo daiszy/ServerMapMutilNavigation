@@ -13,7 +13,7 @@ public class LoginService {
 			    + "and UserPassword = '"+password+"'";
 		//获取DB对象
 		DBManage sqlDbManage = DBManage.creatInstance();
-		sqlDbManage.connectDB();
+		sqlDbManage.connectDB(); 
 		
 		//操作DB对象
 		try {
