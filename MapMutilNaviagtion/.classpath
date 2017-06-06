@@ -21,11 +21,14 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="lib/json-lib-2.2.2-jdk15.jar"/>
-	<classpathentry kind="lib" path="lib/commons-beanutils-1.7.jar"/>
-	<classpathentry kind="lib" path="lib/commons-collections.jar"/>
-	<classpathentry kind="lib" path="lib/commons-lang.jar"/>
-	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/ezmorph.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/catalina.jar" sourcepath="lib/catalina.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/bccs-api-3.0.1.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

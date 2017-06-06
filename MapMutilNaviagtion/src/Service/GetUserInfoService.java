@@ -33,11 +33,17 @@ public class GetUserInfoService {
 				String sex = resultSet.getString("Sex");
 				String telphone = resultSet.getString("Telphone");
 				String ofCity = resultSet.getString("OfCity");
+				String grade = resultSet.getString("Grade");
+				String ordersNum = resultSet.getString("OrdersNum");
+				String status = resultSet.getString("Status");
 				map.put("nickName", nickName);		
 				map.put("name", name);	
 				map.put("sex", sex);	
 				map.put("telphone", telphone);	
-				map.put("ofCity", ofCity);	
+				map.put("ofCity", ofCity);
+				map.put("grade", grade);
+				map.put("ordersNum", ordersNum);
+				map.put("status", status);
 				sqlDbManage.closeDB();	
 				return map;
 			}

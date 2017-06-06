@@ -18,6 +18,9 @@ public class UserInfoUtil {
 		map.put("sex",UserInfo.getSex());
 		map.put("telphone",UserInfo.getTelphone());
 		map.put("ofCity",UserInfo.getOfCity());
+		map.put("grade",UserInfo.getGrade());
+		map.put("ordersNum",UserInfo.getOrdersNum());
+		map.put("status",UserInfo.getStatus());
 		list.add(map);
 		return list;
 	}
