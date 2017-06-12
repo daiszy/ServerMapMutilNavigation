@@ -31,7 +31,11 @@ public class GetUserInfoServlet extends HttpServlet{
 		Map<String,Object> map= new HashMap<String, Object>();
 		map = getUserInfoService.getUserInfo(username);
 		
-		UserInfo userInfo = new UserInfo(map.get("nickName").toString(),map.get("name").toString(),map.get("sex").toString(),map.get("telphone").toString(),map.get("ofCity").toString(),map.get("grade").toString(),map.get("ordersNum").toString(),map.get("status").toString());
+		try {
+			UserInfo userInfo = new UserInfo(map.get("nickName").toString(),map.get("name").toString(),map.get("sex").toString(),map.get("telphone").toString(),map.get("ofCity").toString(),map.get("grade").toString(),map.get("ordersNum").toString(),map.get("status").toString());
+		} catch (NullPointerException e) {
+			// TODO: handle exception
+		}
 		UserInfoUtil userInfoUtil = new UserInfoUtil();
 		List<Map<String,Object>> lists = userInfoUtil.getMaps();
 		
@@ -68,7 +72,12 @@ public class GetUserInfoServlet extends HttpServlet{
 	Map<String,Object> map= new HashMap<String, Object>();
 	map = getUserInfoService.getUserInfo(username);
 	
-	UserInfo userInfo = new UserInfo(map.get("nickName").toString(),map.get("name").toString(),map.get("sex").toString(),map.get("telphone").toString(),map.get("ofCity").toString(),map.get("grade").toString(),map.get("ordersNum").toString(),map.get("status").toString());
+	try {
+		UserInfo userInfo = new UserInfo(map.get("nickName").toString(),map.get("name").toString(),map.get("sex").toString(),map.get("telphone").toString(),map.get("ofCity").toString(),map.get("grade").toString(),map.get("ordersNum").toString(),map.get("status").toString());
+	} catch (NullPointerException e) {
+		// TODO: handle exception
+	}
+	//UserInfo userInfo = new UserInfo(map.get("nickName").toString(),map.get("name").toString(),map.get("sex").toString(),map.get("telphone").toString(),map.get("ofCity").toString(),map.get("grade").toString(),map.get("ordersNum").toString(),map.get("status").toString());
 	UserInfoUtil userInfoUtil = new UserInfoUtil();
 	List<Map<String,Object>> lists = userInfoUtil.getMaps();
 	

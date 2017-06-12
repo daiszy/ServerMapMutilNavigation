@@ -2,6 +2,8 @@ package Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,29 +27,34 @@ public class WebAsignedOrdersServlet extends HttpServlet {
 		
 		response.setHeader("Access-Control-Allow-Origin","*");
 		
+		List<Map<String,Object>> lists= new ArrayList<Map<String,Object>>();
+		
 		String telphone = request.getParameter("username");
 		
 		WebAsignedOrdersService ordersService = new WebAsignedOrdersService();
-		boolean b = ordersService.isAsigned(telphone);
-		if(b)
-		{
-			PushMsgToAll pushMsg = new PushMsgToAll();
-			try {
-				pushMsg.pushMsgToAll(telphone);
-			} catch (PushClientException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (PushServerException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+		lists = ordersService.isAsigned(telphone);
+		try {
+				PushMsgToAll pushMsg = new PushMsgToAll();
+				try {
+					pushMsg.pushMsgToAll(telphone,lists);
+				} catch (PushClientException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (PushServerException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 				
 		//返回信息到客户端
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
-		writer.print(b);
+		writer.print(lists);
 		
 	}
 }

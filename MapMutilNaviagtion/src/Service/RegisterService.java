@@ -6,7 +6,7 @@ import DBManage.DBManage;
 public class RegisterService {
 
 	public boolean register(String nickName,String name,String sex,String telphone,String ofCity,String password) {
-		String insertSqlInfo = "insert into userinfo (NickName,Name,Sex,Telphone,OfCity) VALUES ('"+nickName+"','"+name+"','"+sex+"','"+telphone+"','"+ofCity+"')";
+		String insertSqlInfo = "insert into userinfo (NickName,Name,Sex,Telphone,OfCity,Grade,OrdersNum,Status) VALUES ('"+nickName+"','"+name+"','"+sex+"','"+telphone+"','"+ofCity+"','0','0','0')";
 		String insertSqlLogin = "insert into login (UserTel,UserPassword) VALUES ('"+telphone+"','"+password+"')";
 		//获取DB对象
 		DBManage sqlDbManage = DBManage.creatInstance();
